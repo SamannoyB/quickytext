@@ -1,5 +1,5 @@
 # QuickyText API Documentation
-
+Specially built for Highseas and raspapi-ysws events on hackclub!
 ## Endpoints
 
 ### 1. Home Page
