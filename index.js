@@ -4,14 +4,14 @@ var fs = require("fs");
 var crypto = require("crypto");
 app.use(express.json());
 app.use(express.urlencoded({ extended: true }));
-var storages = "./blog_app/posts.json";
+var storages = "./posts.json";
 
 app.set('json spaces', 2);
-
+app.use(express.static("public"));
 
 const help = [{
     "method": "GET",
-    "url": "https://quickytext.samannoyb.hackclub.app/",
+    "url": "https://quickytext.samannoyb.hackclub.app/curl",
     "description": "Home Page, giving you a welcome!"
 },
 {
@@ -36,7 +36,7 @@ const help = [{
     "method": "POST",
     "url": "https://quickytext.samannoyb.hackclub.app/createpost",
     "description": "Make a new post! Required parameters are name, email, title and content."
-},]
+}]
 
 
 function retrievePosts (storage) {
@@ -68,8 +68,8 @@ function findPost (email) {
 /*app.get('/db', (req, res) => {
     res.sendFile("./posts.json");
 })*/
-app.get('/', (req, res) => {
-    res.send("Welcome to QuickyText! Post whatever you like :D! GET `/help` to get a list of commands for the API!");
+app.get('/curl', (req, res) => {
+    res.send("Welcome to QuickyText! Post whatever you like :D! GET `/help` to get a list of commands for the API! \n");
 });
 
 app.get('/help', (req, res) => {
@@ -97,16 +97,21 @@ app.post("/createpost", (req, res) => {
     posts.push(post);
     makePost(storages, posts);
     //posts = retrievePosts(storages);
-    res.send("Posted successfully!");
+    res.send("Posted successfully! \n");
 });
 
 app.get("/posts", (req, res) => {
     res.json(posts);
 });
 
-app.get("/posts/:email", (req, res) => {
+app.get("/posts/email/:email", (req, res) => {
     var postages = findPost(req.params.email);
-    res.json(postages);
+
+    if (postages.length === 0) {
+        res.send("No posts from this email yet! \n");
+    } else {
+        res.json(postages);
+    }
 });
 
 app.get("/posts/search", (req, res) => {
@@ -119,8 +124,12 @@ app.get("/posts/search", (req, res) => {
         post.title.toLowerCase().includes(loweredquery) ||
         post.content.toLowerCase().includes(loweredquery)
     );
+    if (results.length === 0) {
+        res.send("No search results. \n");
+    } else {
+        res.json(results);
+    }
 
-    res.json(results);
 });
 
 app.listen(3000);
