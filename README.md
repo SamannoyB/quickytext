@@ -21,7 +21,7 @@ Specially built for Highseas and raspapi-ysws events on hackclub!
 
 ### 4. Filter Posts by Email
 - **Method**: `GET`
-- **URL**: [https://quickytext.samannoyb.hackclub.app/posts/[email]](https://quickytext.samannoyb.hackclub.app/posts/[email])
+- **URL**: [https://quickytext.samannoyb.hackclub.app/posts/email/[email]](https://quickytext.samannoyb.hackclub.app/posts/email/[email])
 - **Description**: Filter posts by a specific email address.
 
 ### 5. Search Posts
