@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    <title>Document</title>
+</head>
+<body>
+        <div class="choose">
+            <div id="curl" class="unselected" onclick="select('curl')">cURL</div>
+            <div id="web" class="selected" onclick="select('web')">Web</div>
+        </div>
+        
+        <div id="docs" class="docs">
+            <div class="heading">
+                <h1 style="font-size: 50px; border: none;">QuickyText</h1>
+                <span>
+                    Fast and simple social media micro-posting API! Try it out now!! &#128522;
+                </span>
+            </div>
+            <div class="heading">
+                <h1 style="font-size: 50px; border: none;">Documentation &#128196;</h1>
+            </div>
+            <div class="box">
+                <h1>Welcome Home Page [GET]</h1>
+                <div class="code">
+                    <p>curl https://quickytext.samannoyb.hackclub.app/curl</p>
+                </div>
+                <span>
+                    Home Page, giving you a welcome!
+                </span>
+            </div>
+            <div class="box">
+                <h1>API Docs [GET]</h1>
+                <div class="code">
+                    <p>curl https://quickytext.samannoyb.hackclub.app/help</p>
+                </div>
+                <span>
+                    That's what you are reading right now! The API documentation.
+                </span>
+            </div>
+            <div class="box">
+                <h1>Make A New Post! [POST]</h1>
+                <div class="code">
+                    <p>curl -X POST https://quickytext.samannoyb.hackclub.app/createpost -H "Content-Type: application/json" -d '{"name":"John", "email":"john@example.com", "title":"Hello World", "content":"This is a test post."}'</p>
+                </div>
+                <span>
+                    Make a new post! Required parameters are name, email, title and content.
+                </span>
+            </div>
+            <div class="box">
+                <h1>Access All Posts [GET]</h1>
+                <div class="code">
+                    <p>curl https://quickytext.samannoyb.hackclub.app/posts</p>
+                </div>
+                <span>
+                    All posts of QuickyText in one place!
+                </span>
+            </div>
+            <div class="box">
+                <h1>Filter Posts By Email [GET]</h1>
+                <div class="code">
+                    <p>curl https://quickytext.samannoyb.hackclub.app/posts/email/[email]</p>
+                </div>
+                <span>
+                    Put a specific email address in place of [email]! Filter posts for that email.
+                </span>
+            </div>
+            <div class="box">
+                <h1>Search for all posts [GET]</h1>
+                <div class="code">
+                    <p>curl https://quickytext.samannoyb.hackclub.app/posts/search</p>
+                </div>
+                <span>
+                    Search for all posts in the QuickyText microposting app!
+                </span>
+            </div>
+        </div>
+
+        <div class="docs-2" id="docs-2" style="display: none;">
+            <div class="heading">
+                <h1 style="font-size: 50px; border: none;">QuickyText</h1>
+                <span>
+                    Fast and simple social media micro-posting API! Try it out now!! &#128522;
+                </span>
+            </div>
+            <div class="box">
+                <h1>cURL if you dare!</h1>
+                <div class="code">
+                    <p>curl https://quickytext.samannoyb.hackclub.app/curl</p>
+                </div>
+            </div>
+        </div>
+
+        <div class="footer">
+            Made by <a href="https://github.com/samannoyb"> SamannoyB </a>  
+        </div>
+<script>
+    function select(which) {
+        if (which == 'curl') {
+            document.getElementById("curl").classList.remove("unselected");
+            document.getElementById("curl").classList.add("selected");
+            document.getElementById("web").classList.remove("selected");
+            document.getElementById("web").classList.add("unselected");
+
+            document.getElementById("docs").style.display = "none";
+            document.getElementById("docs-2").style.display = "flex";
+        }
+
+        else if (which == 'web') {
+            document.getElementById("curl").classList.remove("selected");
+            document.getElementById("curl").classList.add("unselected");
+            document.getElementById("web").classList.remove("unselected");
+            document.getElementById("web").classList.add("selected");
+
+            document.getElementById("docs").style.display = "flex";
+            document.getElementById("docs-2").style.display = "none";
+        }
+    }
+</script>
+</body>
+</html>
