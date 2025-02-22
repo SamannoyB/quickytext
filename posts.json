@@ -1,9 +1,18 @@
 [
   {
-    "id": "06ba9ab9-624a-48bf-9778-65140c8b80de",
-    "name": "Sam",
-    "email": "sam@example.com",
+    "id": "df539a53-024c-4c46-aa34-7573c5a3e572",
+    "name": "Sammy",
+    "email": "sammy@example.com",
     "title": "Hello",
-    "content": "This is a test post"
+    "content": "This is a test post",
+    "date": "2025-01-11T20:18:59.786Z"
+  },
+  {
+    "id": "d935a015-6ae7-4a57-830d-feaee2ed7628",
+    "name": "John",
+    "email": "john@example.com",
+    "title": "Hello World",
+    "content": "This is a test post.",
+    "date": "2025-02-22T15:17:27.859Z"
   }
 ]
