@@ -1,10 +1,12 @@
 # QuickyText API Documentation
 Specially built for Highseas and raspapi-ysws events on hackclub!
+
+[Visit Now!](https://quickytext.samannoyb.hackclub.app/)
 ## Endpoints
 
 ### 1. Home Page
 - **Method**: `GET`
-- **URL**: [https://quickytext.samannoyb.hackclub.app/](https://quickytext.samannoyb.hackclub.app/)
+- **URL**: [https://quickytext.samannoyb.hackclub.app/curl](https://quickytext.samannoyb.hackclub.app/curl)
 - **Description**: Home Page, giving you a welcome!
 
 ### 2. Help Page
